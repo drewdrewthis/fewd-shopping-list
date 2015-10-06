@@ -13,17 +13,18 @@
 		<div class="container">
 			<div class="header-top">
 				<span class="item-count">3</span>
-				<span>"items left"</span><br/>
+				<span class="count-words">items left</span><br/>
 			</div>
 			<div class="header-bottom">
 				<form>
-					<input type="text" name="newitem"/>
+					<input type="text" name="newitem" placeholder="Add Item"/>
 					<button type="submit" value="submit">V</button>
 				</form>
 			</div>
 			<div class="main">
 				<div class="main-wrapper">
 					<ol>
+
 						<li value="1">
 							<input type="checkbox" name="item" value="Item 1" />
 							Item 1
@@ -36,15 +37,16 @@
 							<input type="checkbox" name="item" value="Item 1" />
 							Item 1
 						</li>
-						<li value="4">
+						<li value="4" class="finished">
+							Finished!
+						</li>
+						<li value="5" class="done">
 							<input type="checkbox" name="item" value="Item 1" />
 							Item 1
 						</li>
-						<li value="5">
-							<input type="checkbox" name="item" value="Item 1" />
-							Item 1
-						</li>
+						<li class="whiteline"></li>
 					</ol>
+
 				</div>
 			</div>
 		</div>
