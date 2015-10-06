@@ -1,5 +1,6 @@
 * {
   border: 1px solid green;
+  box-sizing: border-box;
 }
 html,
 body,
@@ -7,9 +8,9 @@ body,
   height: 100%;
   width: 100%;
   color: white;
-  font-size: 1.5rem;
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
   letter-spacing: -1px;
+  -webkit-font-smoothing: antialiased;
 }
 .container {
   max-width: 25rem;
@@ -17,14 +18,34 @@ body,
   min-height: 50rem;
   margin: auto;
 }
-.container .item-count {
+.container .header-top {
+  text-align: center;
+}
+.container .header-top .item-count {
   font-size: 3rem;
+}
+.container .header-bottom input[type="text"],
+.container .header-bottom button {
+  height: 2rem;
+  padding: 2rem;
+  border: 2px solid white;
+  vertical-align: middle;
+}
+.container .header-bottom input[type="text"] {
+  color: black;
+  border-radius: 2rem;
+  width: 70%;
+}
+.container .header-bottom button {
+  width: 2rem;
+  border-radius: 100%;
+  margin: 2%;
 }
 .container ol {
   list-style: none;
   padding: 0;
   width: 80%;
-  border-right: 1px solid white;
+  border-right: 2px solid white;
   position: relative;
 }
 .container ol li {
