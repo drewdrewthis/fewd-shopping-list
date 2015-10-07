@@ -101,7 +101,7 @@ body {
 		height: 100%;
 		border: 1px solid white;
 		width: 0;
-		right: 2rem;
+		right: 1.7rem;
     	position: absolute;
     	padding: 0;
     	z-index: -1;
@@ -131,20 +131,25 @@ body {
 
 			&.finished {
 				background-color: transparent;
-				width: 50%;
 				font-size: 2em;
 				border: none;
 				text-align: right;
 				.box-shadow(none);
-				padding-right: 3rem;
-
-				&:after {
-					content: "";
-					height: 10px;
-					width: 10px;
+				padding-right: 1.3rem;
+				
+				&::after {
+					content:"";
+					width: 0.9rem;
+					height: 0.9rem;
+					border-radius: 100%;
 					background: white;
+					display: inline-block;
+					vertical-align: middle;
 				}
+				
 			}
+			
+			
 
 			&.done {
 				background-color: @brown;
