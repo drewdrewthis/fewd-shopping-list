@@ -1,5 +1,4 @@
 * {
-  border: 1px solid #78D000;
   box-sizing: border-box;
   outline: none;
 }
@@ -115,19 +114,23 @@ body .page-wrapper {
   -moz-box-shadow: 0 0 7px 0px black;
   box-shadow: 0 0 7px 0px black;
 }
+.container ol li .fa-angle-down {
+  float: right;
+  right: 1.4rem;
+  position: absolute;
+}
 .container ol li:not(.finished)::before {
   content: "";
   width: 1rem;
   height: 1rem;
-  border-radius: 0.2rem;
+  border-radius: .2rem;
   background: rgba(250, 250, 250, 0.5);
   display: inline-block;
   vertical-align: middle;
-  -webkit-box-shadow: inset 0 0 7px black;
-  -moz-box-shadow: inset 0 0 7px black;
-  box-shadow: inset 0 0 7px black;
+  -webkit-box-shadow: inset 0px 0px 7px rgba(9, 22, 70, 0.83);
+  -moz-box-shadow: inset 0px 0px 7px rgba(9, 22, 70, 0.83);
+  box-shadow: inset 0px 0px 7px rgba(9, 22, 70, 0.83);
   margin-right: 1rem;
-  border: 1px solid black;
   opacity: .5;
 }
 .container ol li:hover {
@@ -136,6 +139,34 @@ body .page-wrapper {
   box-shadow: 0 0 7px 0px white;
   border: 1px solid white;
   background: #95ff04;
+}
+.container ol li.editing {
+  background: #FFFA62;
+  color: #808080;
+  height: 7.2em;
+  border-right: .5rem solid orange;
+}
+.container ol li.editing .fa-angle-down {
+  transform: rotate(180deg);
+}
+.container ol li.editing .controls button {
+  margin: 1rem 0;
+  padding: 0.6rem 0;
+  color: white;
+  width: 45%;
+  background: #BF0000;
+  font-size: 1.4rem;
+  color: #cccccc;
+}
+.container ol li.editing .controls button:hover,
+.container ol li.editing .controls .clicked {
+  -webkit-box-shadow: inset 0 0 5px black;
+  -moz-box-shadow: inset 0 0 5px black;
+  box-shadow: inset 0 0 5px black;
+  color: white;
+}
+.container ol li.editing .controls .delete {
+  float: right;
 }
 .container ol li.finished {
   background-color: transparent;
@@ -160,6 +191,8 @@ body .page-wrapper {
   background-color: #785B00;
   border: 1px solid #785B00;
   width: 60%;
+  font-style: italic;
+  text-decoration: line-through;
 }
 .container ol li.done:hover {
   -webkit-box-shadow: 0 0 7px 0px white;
