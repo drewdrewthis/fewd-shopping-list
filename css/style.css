@@ -177,6 +177,9 @@ body .page-wrapper {
   -moz-box-shadow: none;
   box-shadow: none;
   padding-right: 1.3rem;
+  -webkit-text-shadow: 0 0 30px rgba(0, 0, 0, 0.65);
+  -moz-text-shadow: 0 0 30px rgba(0, 0, 0, 0.65);
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.65);
 }
 .container ol li.finished::after {
   content: "";
