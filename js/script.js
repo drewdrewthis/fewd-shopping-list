@@ -73,8 +73,9 @@ $('#item-form').submit(function(e) {
 	}
 });
 
-$('li').click( function() {
+$('.item').click( function() {
 	alert("yas");
+	console.log('nooo');
 });
 
 
