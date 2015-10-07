@@ -26,7 +26,7 @@ var items = [
 
 function createItemString( C, I, N) {
 	
-	var htmlString = '<li class= "' + C + '" value="' + I + '">' + N + '<i class="fa fa-angle-down"></i></li>';
+	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span>' + N + '<i class="fa fa-angle-down"></i></li>';
 	
 	return htmlString;
 };
@@ -73,11 +73,11 @@ $('#item-form').submit(function(e) {
 	}
 });
 
-$('li::before').click( function() {
+$('li').click( function() {
 	alert("yas");
 });
 
-makeList();
+
 
 // Mark Items as Done
 
@@ -87,6 +87,5 @@ makeList();
 
 // Delete Items
 
-
-return "";
+makeList();
 });
