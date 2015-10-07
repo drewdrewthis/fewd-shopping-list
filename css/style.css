@@ -197,6 +197,9 @@ body .page-wrapper {
   -moz-text-shadow: 0 0 30px rgba(0, 0, 0, 0.65);
   text-shadow: 0 0 30px rgba(0, 0, 0, 0.65);
 }
+.container ol li.finished .fa-angle-down {
+  display: none;
+}
 .container ol li.finished::after {
   content: "";
   width: 0.9rem;
