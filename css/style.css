@@ -102,6 +102,7 @@ body .page-wrapper {
   width: 100%;
   float: left;
   position: relative;
+  display: none;
 }
 .container ol li {
   background: #78D000;
@@ -220,7 +221,7 @@ body .page-wrapper {
   font-style: italic;
   text-decoration: line-through;
 }
-.container ol li.done .clicked {
+.container ol li.done .important {
   display: none;
 }
 .container ol li.done button.delete {

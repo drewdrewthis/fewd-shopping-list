@@ -58,7 +58,7 @@ function checkCount() {
 $('#item-form').submit(function(e) {
 	
 	e.preventDefault();
-	$('#item-list').css({"visibility":"visible"});
+	$('.container ol').css({"display":"block"});
 
 	newItem = $('input').val(),
 	newItemString = "";
