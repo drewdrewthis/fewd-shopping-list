@@ -40,6 +40,18 @@ function makeList() {
 	$('.item-count').text(itemCount);
 }
 
+function checkCount() {
+	$('.item-count').text(itemCount);
+	if(itemCount >= 10)
+		$('.item-count').css({'font-size':'2em'});
+	else {
+		$('.item-count').css({'font-size':'4em'});
+		if(itemCount == 1)
+			$('.count-words').text("item left");
+		else
+			$('.count-words').text("items left");
+	};
+};
 
 // Add New Items on Submit
 
@@ -63,15 +75,10 @@ $('#item-form').submit(function(e) {
 
 		$('#item-list').prepend(newItemString);
 		itemCount++;
-		$('.item-count').text(itemCount);
 	}
 
+	checkCount();
 	this.reset();
-});
-
-$('.item').click( function() {
-	alert("yas");
-	console.log('nooo');
 });
 
 $('#item-list').on('click', '.item-btn', function(e){
@@ -81,12 +88,12 @@ $('#item-list').on('click', '.item-btn', function(e){
 	if($(this).parent().prevAll('.finished').length == 0) {		
 		$(this).parent().insertAfter('.finished').toggleClass('done');
 		itemCount--;
-		$('.item-count').text(itemCount);
+		checkCount();
 	}
 	else {
 		$(this).parent().insertBefore('.finished').toggleClass('done');
 		itemCount++;
-		$('.item-count').text(itemCount);
+		checkCount();
 	}
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
@@ -105,7 +112,7 @@ $('#item-list').on('click', '.item-btn', function(e){
 		$(this).remove();
 	});
 	itemCount--;
-	$('.item-count').text(itemCount);
+	checkCount();
 });
 
 makeList();
