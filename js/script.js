@@ -44,6 +44,8 @@ function makeList() {
 
 	$('#item-list').append( createItemString( C,I,N ) );
 	});
+
+	$('.item-count').text(items.length);
 }
 
 
@@ -70,6 +72,7 @@ $('#item-form').submit(function(e) {
 		console.log(items);
 
 		$('#item-list').prepend(newItemString);
+		$('.item-count').text(items.length);
 	}
 });
 

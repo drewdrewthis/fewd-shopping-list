@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   outline: none;
+  transition: all 1s ease;
 }
 .my-boxshadow-black {
   -webkit-box-shadow: 0 0 7px 0px black;
