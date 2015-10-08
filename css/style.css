@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   outline: none;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 .my-boxshadow-black {
   -webkit-box-shadow: 0 0 7px 0px black;
@@ -133,6 +133,7 @@ body .page-wrapper {
 .container ol li.editing,
 .container ol li.important {
   background: #E8E595;
+  background: repeating-linear-gradient(45deg, #E8E595, #E8E595 5px, #dfdb6b 5px, #dfdb6b 10px);
   color: #808080;
   border-color: #E8E595;
   border-right: .5rem solid orange;
@@ -145,13 +146,6 @@ body .page-wrapper {
 .container ol li.editing .controls,
 .container ol li.important .controls {
   display: block;
-}
-.container ol li.editing:hover,
-.container ol li.important:hover {
-  -webkit-box-shadow: 0 0 7px 0px white;
-  -moz-box-shadow: 0 0 7px 0px white;
-  box-shadow: 0 0 7px 0px white;
-  background: #edeaaa;
 }
 .container ol li.item:not(.finished) .item-btn {
   width: 1rem;
