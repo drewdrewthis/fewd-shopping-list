@@ -103,7 +103,7 @@ $('#item-list').on('click', '.item-btn', function(e){
 		$(this).parent().insertBefore('.finished').toggleClass('done');
 		itemCount++;
 		checkCount();
-	}
+	};
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
 })
