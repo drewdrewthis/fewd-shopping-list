@@ -85,7 +85,7 @@ body .page-wrapper {
   position: relative;
 }
 .container #whiteline {
-  height: 92%;
+  height: calc(100% - 2.7rem);
   border: 1px solid white;
   width: 0;
   right: 1.7rem;
