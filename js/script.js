@@ -78,7 +78,19 @@ $('.item').click( function() {
 	console.log('nooo');
 });
 
+$('#item-list').on('click', '.item-btn', function(e){
 
+	$(this).parent().toggleClass('done');
+  // fires when any LIs are clicked on
+  // including LIs that aren't on the page when it is initially loaded
+});
+
+$('#item-list').on('click', '.fa-angle-down', function(e){
+
+	$(this).parent().toggleClass('editing');
+  // fires when any LIs are clicked on
+  // including LIs that aren't on the page when it is initially loaded
+});
 
 // Mark Items as Done
 
