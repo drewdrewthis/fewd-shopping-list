@@ -106,6 +106,8 @@ $('#item-list').on('click', '.item-btn', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
 	$(this).parents('.item').remove();
+	$('.item-count').text(items.length);
+
 	
 });
 
