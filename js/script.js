@@ -21,7 +21,16 @@ var newItem = $('input').val(),
 
 function createItemString( C, I, N) {
 	
-	htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span><i class="fa fa-exclamation"></i><span class="item-name">' + N + '</span><i class="fa fa-angle-down"></i><div class="controls"><button class="important">IMPORTANT!</button><button class="delete">DELETE</button></div></li>';
+	htmlString = '<li class="item ' + C + '" value="' + I + '">\
+					<span class="item-btn"></span>\
+					<i class="fa fa-exclamation"></i>\
+					<span class="item-name">' + N + '</span>\
+					<i class="fa fa-angle-down"></i>\
+					<div class="controls">\
+						<button class="important">IMPORTANT!</button>\
+						<button class="delete">DELETE</button>\
+					</div>\
+				</li>';
 	
 	return htmlString;
 };
