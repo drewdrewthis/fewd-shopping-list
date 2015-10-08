@@ -119,6 +119,9 @@ body .page-wrapper {
   right: 1.4rem;
   position: absolute;
 }
+.container ol li .controls {
+  display: none;
+}
 .container ol li:hover {
   -webkit-box-shadow: 0 0 7px 0px white;
   -moz-box-shadow: 0 0 7px 0px white;
@@ -137,6 +140,10 @@ body .page-wrapper {
 .container ol li.important .fa-exclamation {
   color: #BF0000;
   margin-right: 1em;
+}
+.container ol li.editing .controls,
+.container ol li.important .controls {
+  display: block;
 }
 .container ol li.editing:hover,
 .container ol li.important:hover {
@@ -175,9 +182,9 @@ body .page-wrapper {
 }
 .container ol li.editing .controls button:hover,
 .container ol li.editing .controls .clicked {
-  -webkit-box-shadow: inset 0 0 5px black;
-  -moz-box-shadow: inset 0 0 5px black;
-  box-shadow: inset 0 0 5px black;
+  -webkit-box-shadow: inset 0 0 1em black;
+  -moz-box-shadow: inset 0 0 1em black;
+  box-shadow: inset 0 0 1em black;
   color: white;
 }
 .container ol li.editing .controls .delete {
@@ -214,6 +221,13 @@ body .page-wrapper {
   width: 60%;
   font-style: italic;
   text-decoration: line-through;
+}
+.container ol li.done .clicked {
+  display: none;
+}
+.container ol li.done button.delete {
+  width: 100%;
+  font-style: normal;
 }
 .container ol li.done:hover {
   -webkit-box-shadow: 0 0 7px 0px white;

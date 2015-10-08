@@ -26,7 +26,7 @@ var items = [
 
 function createItemString( C, I, N) {
 	
-	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span>' + N + '<i class="fa fa-angle-down"></i></li>';
+	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span>' + N + '<i class="fa fa-angle-down"></i><div class="controls"><button class="clicked">IMPORTANT!</button><button class="delete">DELETE</button></div></li>';
 	
 	return htmlString;
 };
@@ -83,13 +83,21 @@ $('#item-list').on('click', '.item-btn', function(e){
 	$(this).parent().toggleClass('done');
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
-});
-
-$('#item-list').on('click', '.fa-angle-down', function(e){
+})
+.on('click', '.fa-angle-down', function(e){
 
 	$(this).parent().toggleClass('editing');
-  // fires when any LIs are clicked on
-  // including LIs that aren't on the page when it is initially loaded
+
+})
+.on('click', '.important', function(e){
+
+	$(this).parent().toggleClass('editing');
+	
+})
+.on('click', '.delete', function(e){
+
+	$(this).parent().toggleClass('editing');
+	
 });
 
 // Mark Items as Done

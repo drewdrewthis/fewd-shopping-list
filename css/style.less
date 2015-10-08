@@ -136,6 +136,10 @@ body {
     			position: absolute;
 			}
 
+			.controls {
+				display: none;
+			}
+
 			//&:not(.finished)::before {
 
 			&:hover {
@@ -154,6 +158,10 @@ body {
 					color: @red;
 					margin-right: 1em;
 				}
+
+				.controls {
+					display: block;
+				}	
 
 				&:hover {
 				.box-shadow(0 0 7px 0px white);
@@ -196,7 +204,7 @@ body {
 					}
 
 					button:hover, .clicked {
-						.box-shadow(inset 0 0 5px black);
+						.box-shadow(inset 0 0 1em black);
 						color: white;
 					}
 
@@ -237,6 +245,15 @@ body {
 				width: 60%;
 				font-style: italic;
 				text-decoration: line-through;
+
+				.clicked {
+					display: none;
+				}
+
+				button.delete {
+					width: 100%;
+					font-style: normal;
+				}
 
 				&:hover {
 					.box-shadow(0 0 7px 0px white);
