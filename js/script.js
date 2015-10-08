@@ -111,7 +111,7 @@ $('#item-list').on('click', '.item-btn', function(e){
 	$(this).parents('.item').fadeOut("slow", function() {
 		$(this).remove();
 	});
-	if($(this).parent().parent('.done') == 0)
+	if($(this).parent().parent('.done').length == 0)
 		itemCount--;
 	checkCount();
 })
