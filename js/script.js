@@ -26,7 +26,7 @@ var items = [
 
 function createItemString( C, I, N) {
 	
-	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span><i class="fa fa-exclamation"></i>' + N + '<i class="fa fa-angle-down"></i><div class="controls"><button class="clicked important">IMPORTANT!</button><button class="delete">DELETE</button></div></li>';
+	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span><i class="fa fa-exclamation"></i>' + N + '<i class="fa fa-angle-down"></i><div class="controls"><button class="important">IMPORTANT!</button><button class="delete">DELETE</button></div></li>';
 	
 	return htmlString;
 };
