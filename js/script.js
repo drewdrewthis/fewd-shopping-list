@@ -13,7 +13,8 @@ var newItem = $('input').val(),
 			"name" : "Finished!",
 			"class" : "finished"
 		}
-	];
+	],
+	itemCount = items.length-1;
 
 // Class = C, Index = I, Name = N
 // Uncaught SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
@@ -36,7 +37,7 @@ function makeList() {
 		$('#item-list').append( createItemString( C,I,N ) );
 	});
 
-	$('.item-count').text(items.length-1);
+	$('.item-count').text(itemCount);
 }
 
 
@@ -61,7 +62,8 @@ $('#item-form').submit(function(e) {
 		console.log(items);
 
 		$('#item-list').prepend(newItemString);
-		$('.item-count').text(items.length-1);
+		itemCount++;
+		$('.item-count').text(itemCount);
 	}
 
 	this.reset();
@@ -76,10 +78,16 @@ $('#item-list').on('click', '.item-btn', function(e){
 
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
-	if($(this).parent().prevAll('.finished').length == 0)
+	if($(this).parent().prevAll('.finished').length == 0) {		
 		$(this).parent().toggleClass('done').insertAfter('.finished');
-	else
+		itemCount--;
+		$('.item-count').text(itemCount);
+	}
+	else {
 		$(this).parent().toggleClass('done').insertBefore('.finished');
+		itemCount++;
+		$('.item-count').text(itemCount);
+	}
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
 })
@@ -94,7 +102,8 @@ $('#item-list').on('click', '.item-btn', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
 	$(this).parents('.item').remove();
-	$('.item-count').text(items.length-1);
+	itemCount--;
+	$('.item-count').text(itemCount);
 });
 
 makeList();
