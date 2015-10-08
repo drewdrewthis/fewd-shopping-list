@@ -89,9 +89,9 @@ $('#item-list').on('click', '.item-btn', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
 	if($(this).parent().prevAll('.finished').length == 0)
-		$(this).parent().toggleClass('done').detach().insertAfter('.finished');
+		$(this).parent().toggleClass('done').insertAfter('.finished');
 	else
-		$(this).parent().toggleClass('done').detach().insertBefore('.finished');
+		$(this).parent().toggleClass('done').insertBefore('.finished');
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
 })
