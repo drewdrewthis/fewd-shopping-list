@@ -79,12 +79,12 @@ $('#item-list').on('click', '.item-btn', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
 	if($(this).parent().prevAll('.finished').length == 0) {		
-		$(this).parent().toggleClass('done').insertAfter('.finished');
+		$(this).parent().insertAfter('.finished').toggleClass('done');
 		itemCount--;
 		$('.item-count').text(itemCount);
 	}
 	else {
-		$(this).parent().toggleClass('done').insertBefore('.finished');
+		$(this).parent().insertBefore('.finished').toggleClass('done');
 		itemCount++;
 		$('.item-count').text(itemCount);
 	}
@@ -101,7 +101,9 @@ $('#item-list').on('click', '.item-btn', function(e){
 .on('click', '.delete', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
-	$(this).parents('.item').remove();
+	$(this).parents('.item').fadeOut("slow", function() {
+		$(this).remove();
+	});
 	itemCount--;
 	$('.item-count').text(itemCount);
 });
