@@ -83,7 +83,12 @@ $('.item').click( function() {
 
 $('#item-list').on('click', '.item-btn', function(e){
 
-	$(this).parent().toggleClass('done');
+	pos = $(this).parents('.item').attr("value");
+	items.splice(pos, 1);
+	if($(this).parent().prevAll('.finished').length == 0)
+		$(this).parent().toggleClass('done').detach().insertAfter('.finished');
+	else
+		$(this).parent().toggleClass('done').detach().insertBefore('.finished');
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
 })
@@ -99,6 +104,8 @@ $('#item-list').on('click', '.item-btn', function(e){
 })
 .on('click', '.delete', function(e){
 
+	pos = $(this).parents('.item').attr("value");
+	items.splice(pos, 1);
 	$(this).parents('.item').remove();
 	
 });
