@@ -26,7 +26,7 @@ var items = [
 
 function createItemString( C, I, N) {
 	
-	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span>' + N + '<i class="fa fa-angle-down"></i><div class="controls"><button class="clicked">IMPORTANT!</button><button class="delete">DELETE</button></div></li>';
+	var htmlString = '<li class="item ' + C + '" value="' + I + '"><span class="item-btn"></span><i class="fa fa-exclamation"></i>' + N + '<i class="fa fa-angle-down"></i><div class="controls"><button class="clicked important">IMPORTANT!</button><button class="delete">DELETE</button></div></li>';
 	
 	return htmlString;
 };
@@ -96,17 +96,13 @@ $('#item-list').on('click', '.item-btn', function(e){
   // including LIs that aren't on the page when it is initially loaded
 })
 .on('click', '.fa-angle-down', function(e){
-
 	$(this).parent().toggleClass('editing');
-
 })
 .on('click', '.important', function(e){
-
-	$(this).parent().toggleClass('editing');
-	
+	$(this).toggleClass('clicked');
+	$(this).parents('.item').children('.fa-exclamation').toggle();
 })
 .on('click', '.delete', function(e){
-
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
 	$(this).parents('.item').remove();

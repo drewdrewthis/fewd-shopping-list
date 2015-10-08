@@ -120,7 +120,8 @@ body .page-wrapper {
   right: 1.4rem;
   position: absolute;
 }
-.container ol li .controls {
+.container ol li .controls,
+.container ol li .fa-exclamation {
   display: none;
 }
 .container ol li:hover {
