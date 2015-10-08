@@ -55,6 +55,7 @@ $('#item-form').submit(function(e) {
 	
 	e.preventDefault();
 
+
 	console.log('Submit!');
 	var newItem = "",
 		newItemString = "";
@@ -74,6 +75,8 @@ $('#item-form').submit(function(e) {
 		$('#item-list').prepend(newItemString);
 		$('.item-count').text(items.length);
 	}
+
+	this.reset();
 });
 
 $('.item').click( function() {
