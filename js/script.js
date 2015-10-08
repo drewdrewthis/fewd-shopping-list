@@ -96,7 +96,7 @@ $('#item-list').on('click', '.item-btn', function(e){
 })
 .on('click', '.delete', function(e){
 
-	$(this).parent().toggleClass('editing');
+	$(this).parents('.item').remove();
 	
 });
 
