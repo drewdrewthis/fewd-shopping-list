@@ -118,9 +118,7 @@ $('#item-list').on('click', '.item-btn', function(e){
 .on('click', '.delete', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
-	$(this).parents('.item').fadeOut("slow", function() {
-		$(this).remove();
-	});
+	$(this).parents('.item').remove();
 	if($(this).parent().parent('.done').length == 0)
 		itemCount--;
 	checkCount();
