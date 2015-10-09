@@ -25,7 +25,7 @@ function createItemString( C, I, N) {
 					<span class="item-btn"></span>\
 					<i class="fa fa-exclamation"></i>\
 					<span class="item-name">' + N + '</span>\
-					<i class="fa fa-angle-down"></i>\
+					<span class="angle-down-expander"><i class="fa fa-angle-down"></i></span>\
 					<div class="controls">\
 						<button class="important">IMPORTANT!</button>\
 						<button class="delete">DELETE</button>\
@@ -108,7 +108,7 @@ $('#item-list').on('click', '.item-btn', function(e){
   // fires when any LIs are clicked on
   // including LIs that aren't on the page when it is initially loaded
 })
-.on('click', '.fa-angle-down', function(e){
+.on('click', '.angle-down-expander', function(e){
 	$(this).parent().toggleClass('editing');
 })
 .on('click', '.important', function(e){
