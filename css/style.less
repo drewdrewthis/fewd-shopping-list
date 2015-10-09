@@ -18,7 +18,7 @@
 }
 
 @green: #78D000;
-@brown: #785B00;
+@grey: #514C48;
 @red: #BF0000;
 @yellow: #E8E595;
 .my-boxshadow-black {
@@ -125,16 +125,28 @@ body {
 		li {
 			background: @green;
 			border: 1px solid @green;
-			padding: 1rem;
+			padding: 0.5rem;
 			float: right;
 			width: 100%;
 			margin-bottom: 1rem;
 			.my-boxshadow-black;
 
+			.item-btn {
+				content:"";
+				width: 2rem;
+				height: 2rem;
+				display: inline-block;
+				vertical-align: middle;
+				.box-shadow(inset 0px 0px 12px rgba(0, 0, 0, 0.83));
+				margin-right: 1rem;
+				opacity: .5;
+			}
+
 			.fa-angle-down {
 				float: right;
-    			right: 1.4rem;
-    			position: absolute;
+    			right: 0.9rem;
+    			position: relative;
+    			top: 0.5rem;
 			}
 
 			.controls, .fa-exclamation {
@@ -170,20 +182,6 @@ body {
 
 				.controls {
 					display: block;
-				}
-			}
-
-			&.item:not(.finished) {
-				.item-btn {
-					width: 1rem;
-					height: 1rem;
-					border-radius: .2rem;
-					background: rgba(250, 250, 250, .5);
-					display: inline-block;
-					vertical-align: middle;
-					.box-shadow(inset 0px 0px 7px rgba(9, 22, 70, 0.83));
-					margin-right: 1rem;
-					opacity: .5;
 				}
 			}
 			
@@ -227,7 +225,7 @@ body {
 				padding-right: 1.3rem;
 				.text-shadow(0 0 30px rgba(0, 0, 0, 0.65));
 
-				.fa-angle-down {
+				.fa-angle-down, .item-btn {
 					display: none;
 				}
 
@@ -248,11 +246,16 @@ body {
 			}
 
 			&.done {
-				background-color: @brown;
-				border: 1px solid @brown;
+				background-color: @grey;
+				border: 1px solid @grey;
 				width: 60%;
 				font-style: italic;
 				text-decoration: line-through;
+				
+				.item-btn {
+					background: rgb(64, 42, 42);
+					border-radius: 100%;
+				}
 
 				.important {
 					display: none;
@@ -266,19 +269,7 @@ body {
 				&:hover {
 					.box-shadow(0 0 7px 0px white);
 					border: 1px solid white;
-					background: lighten(@brown, 10%);
-				}
-
-				.item-btn {
-				content:"";
-				width: 1rem;
-				height: 1rem;
-				border-radius: 100%;
-				display: inline-block;
-				vertical-align: middle;
-				.box-shadow(inset 0px 0px 12px rgba(0, 0, 0, 0.83));
-				margin-right: 1rem;
-				opacity: .5;
+					background: lighten(@grey, 10%);
 				}
 			}
 		}
