@@ -44,6 +44,7 @@ function makeList() {
 		N = items[index].name;
 
 		$('#item-list').append( createItemString( C,I,N ) );
+		console.log("This" + C,I,N);
 	});
 
 	$('.item-count').text(itemCount);
@@ -78,7 +79,7 @@ $('#item-form').submit(function(e) {
 	else {
 		items.push( { "name " : newItem, "class" : "" } );
 
-		newItemString = createItemString("",0,newItem);
+		newItemString = createItemString("",items.length-1,newItem);
 
 		console.log(items);
 
