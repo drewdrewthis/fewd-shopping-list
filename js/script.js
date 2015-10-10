@@ -21,7 +21,7 @@ var newItem = $('input').val(),
 
 function createItemString( C, I, N) {
 	
-	htmlString = '<li class="item ' + C + '" value="' + I + '">\
+	htmlString = '<li class="item ' + C + '" value="' + I + '" style="display:none">\
 					<span class="item-btn"></span>\
 					<i class="fa fa-exclamation"></i>\
 					<span class="item-name">' + N + '</span>\
@@ -83,7 +83,7 @@ $('#item-form').submit(function(e) {
 
 		console.log(items);
 
-		$('#item-list').prepend(newItemString);
+		$('#item-list').prepend(newItemString).children().fadeIn(500);
 		itemCount++;
 	}
 
@@ -96,12 +96,12 @@ $('#item-list').on('click', '.item-btn', function(e){
 	pos = $(this).parents('.item').attr("value");
 	items.splice(pos, 1);
 	if($(this).parent().prevAll('.finished').length == 0) {		
-		$(this).parent().insertAfter('.finished').toggleClass('done');
+		$(this).parent().hide().toggleClass('done').insertAfter('.finished').fadeIn(500);
 		itemCount--;
 		checkCount();
 	}
 	else {
-		$(this).parent().insertBefore('.finished').toggleClass('done');
+		$(this).parent().hide().toggleClass('done').insertBefore('.finished').fadeIn(500);
 		itemCount++;
 		checkCount();
 	};
